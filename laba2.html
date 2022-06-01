@@ -17,7 +17,7 @@
     <button type="submit" id="search-button">🔎</button>
 </form>
 <img id="spinner" src="spinner.gif" style="display: none "/>
-<ul id="list">
+<ul id="list" >
 </ul>
 
 
@@ -61,13 +61,13 @@ const list = document.getElementById("list");
 let result ="";
 
 for (let item of data.forms) {
-    result += `<li>
-<b> ${item.name}</b>
+    result += `<li >
+<b>"Имя покемона:" ${item.name}</b>
     </li>`;
 }
     for (let item of data.types){
         result += `<li>
-<b> ${item.type.name}</b>
+<b>"Тип покемона:" ${item.type.name}</b>
     </li>`;
 }
 
