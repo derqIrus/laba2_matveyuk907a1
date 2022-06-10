@@ -31,6 +31,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const spinner = document.getElementById("spinner");
     const searchButton = document.getElementById("search-button")
+
 const form = document.getElementById("form");
 form.addEventListener("submit", async e => {
     errorMessage = "";
@@ -48,6 +49,7 @@ try {
     spinner.style.display="none"
     searchButton.disabled = false;
     render();
+
 })
 });
 
@@ -59,17 +61,26 @@ function render(){
     }
 const list = document.getElementById("list");
 let result ="";
+let img="";
 
-for (let item of data.forms) {
+
+
     result += `<li >
-<b>"Имя покемона:" ${item.name}</b>
+<b>"Имя покемона:" ${data.name}</b>
     </li>`;
-}
+
     for (let item of data.types){
         result += `<li>
 <b>"Тип покемона:" ${item.type.name}</b>
     </li>`;
 }
+
+    for (let item of data.sprites){
+         `<li>
+<b><image src="${item.front_default}"></b>
+    </li>`;
+    }
+    image.src = img;
 
 list.innerHTML=result;
 }
